@@ -1,11 +1,11 @@
 ---
 layout: base
-title: Blog
-description: 'All blog posts can be found here'
+title: Code Samples
+description: 'All Java code samples and tutorials can be found here'
 pagination:
   data: collections.allPosts
   size: 8
-permalink: 'blog/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
+permalink: 'code/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
 ---
 
 <div class="wrapper">
@@ -18,9 +18,8 @@ permalink: 'blog/{% if pagination.pageNumber >=1 %}page-{{ pagination.pageNumber
   </header>
 
   <div class="region flow prose" style="--region-space-top: var(--space-xl-2xl)">
-    <p>This blog has a pagination of <strong>{{ pagination.size }}</strong> posts per page.<br>
-      The pagination is only shown if there are more posts ({{ collections.posts.length }}) than items per
-      page ({{ pagination.size }}).
+    <p>This section contains <strong>{{ collections.posts.length }}</strong> Java code samples, showing <strong>{{ pagination.size }}</strong> per page.<br>
+      Browse by topic using the <a href="/tags/">tags page</a> or search for specific concepts.
     </p>
   </div>
 

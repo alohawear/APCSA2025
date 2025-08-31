@@ -5,30 +5,17 @@ export default {
       url: '/about/'
     },
     {
+      text: 'Code',
+      url: '/code/'
+    },
+    {
+      text: 'Topics',
+      url: '/topics/'
+    },
+    {
       text: 'Docs',
-      url: '/get-started/'
-    },
-    {
-      text: 'Built with',
-      url: '/built-with/'
-    },
-    {
-      text: 'Blog',
-      url: '/blog/'
+      url: '/docs/'
     }
   ],
-  bottom: [
-    {
-      text: 'Style guide',
-      url: '/styleguide/'
-    },
-    {
-      text: 'Imprint',
-      url: '/imprint/'
-    },
-    {
-      text: 'Privacy',
-      url: '/privacy/'
-    }
-  ]
+  bottom: []
 };

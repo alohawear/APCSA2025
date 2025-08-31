@@ -1,24 +1,24 @@
 export const url = process.env.URL || 'http://localhost:8080';
 // Extract domain from `url`
 export const domain = new URL(url).hostname;
-export const siteName = 'Eleventy Excellent';
-export const siteDescription = 'Eleventy starter for building modern, resilient websites';
+export const siteName = 'AP Computer Science A';
+export const siteDescription = 'Code samples and tutorials for AP Computer Science A students';
 export const siteType = 'Person'; // schema
 export const locale = 'en_EN';
 export const lang = 'en';
 export const skipContent = 'Skip to content';
 export const author = {
-  name: 'Lene Saile', // i.e. Lene Saile - page / blog author's name. Must be set.
+  name: 'N. Reveal', // page / blog author's name. Must be set.
   avatar: '/icon-512x512.png', // path to the author's avatar. In this case just using a favicon.
-  email: 'hola@lenesaile.com', // i.e. hola@lenesaile.com - email of the author
-  website: 'https://www.lenesaile.com', // i.e. https.://www.lenesaile.com - the personal site of the author
-  fediverse: '@lene@front-end.social' // used for highlighting journalism on the fediverse. Can be Mastodon, Flipboard, Threads, WordPress (with the ActivityPub plugin installed), PeerTube, Pixelfed, etc. https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/
+  email: 'nreveal@mnps.org', // email of the author
+  website: '', // the personal site of the author
+  fediverse: '' // used for highlighting journalism on the fediverse.
 };
 export const creator = {
-  name: 'Lene Saile', // i.e. Lene Saile - creator's (developer) name.
-  email: 'hola@lenesaile.com',
-  website: 'https://www.lenesaile.com',
-  social: 'https://front-end.social/@lene'
+  name: 'N. Reveal', // creator's (developer) name.
+  email: 'nreveal@mnps.org',
+  website: '',
+  social: ''
 };
 export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg'; // used for favicon generation
 export const themeColor = '#dd4462'; // used in manifest, for example primary color value
@@ -29,8 +29,8 @@ export const opengraph_default_alt =
   "Visible content: An Eleventy starter with CUBE CSS, Cube CSS, Every Layout, Design Tokens and Tailwind for uitility classes. A workflow for building modern and resilient websites, introduced by Andy Bell's project buildexcellentwebsit.es"; // alt text for default meta image"
 export const blog = {
   // RSS feed
-  name: 'My Web Development Blog',
-  description: 'Tell the word what you are writing about in your blog. It will show up on feed readers.',
+  name: 'AP Computer Science A Code Samples',
+  description: 'Java code examples and tutorials for AP Computer Science A students.',
   // feed links are looped over in the head. You may add more to the array.
   feedLinks: [
     {
@@ -44,12 +44,12 @@ export const blog = {
       type: 'application/json'
     }
   ],
-  // Tags
-  tagSingle: 'Tag',
-  tagPlural: 'Tags',
-  tagMore: 'More tags:',
+  // Topics
+  tagSingle: 'Topic',
+  tagPlural: 'Topics',
+  tagMore: 'More topics:',
   // pagination
-  paginationLabel: 'Blog',
+  paginationLabel: 'Code',
   paginationPage: 'Page',
   paginationPrevious: 'Previous',
   paginationNext: 'Next',
@@ -79,14 +79,6 @@ export const themeSwitch = {
   dark: 'dark'
 };
 export const greenweb = {
-  // https://carbontxt.org/
-  disclosures: [
-    {
-      docType: 'sustainability-page',
-      url: `${url}/sustainability/`,
-      domain: domain
-    }
-  ],
   services: [{domain: 'netlify.com', serviceType: 'cdn'}]
 };
 export const viewRepo = {
@@ -94,4 +86,4 @@ export const viewRepo = {
   allow: true,
   infoText: 'View this page on GitHub'
 };
-export const easteregg = true;
+export const easteregg = false;

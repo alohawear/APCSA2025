@@ -1,13 +1,13 @@
 ---
 layout: tags
-permalink: /tags/index.html
+permalink: /topics/index.html
 eleventyComputed:
   title: '{{ meta.blog.tagPlural }}'
 ---
 
 <div class="taglist | mt-s-m cluster">
   {% for tag in collections.tagList %}
-    <a href="/tags/{{ tag | slugify }}/" class="button"> {{ tag }} </a>
+    <a href="/topics/{{ tag | slugify }}/" class="button"> {{ tag }} </a>
   {% endfor %}
 </div>
 
