@@ -11,18 +11,20 @@ Welcome to AP Computer Science A at **Martin Luther King Jr. Academic Magnet at 
 
 This course introduces fundamental computer science concepts using the Java programming language. Students will learn:
 
-- **Programming Fundamentals** - Variables, data types, and control structures
-- **Object-Oriented Programming** - Classes, objects, inheritance, and polymorphism  
-- **Data Structures** - Arrays, ArrayLists, and 2D arrays
-- **Algorithms** - Searching, sorting, and recursion
-- **AP Exam Preparation** - Practice with AP-style problems and solutions
+- **Unit 1** - Variables, Objects, Methods
+- **Unit 2** - Sequencing, Selection, Iteration  
+- **Unit 3** - Classes, Constructors, Scope
+- **Unit 4** - Data, Sort, Search
+- **AP Exam Preparation** - Practice with AP-style problems and solutions.
 
-## About Your Teacher
+## About Your Instructor
 
-**N. Reveal** - AP Computer Science A Instructor  
-Email: nreveal@mnps.org
+**N. Reveal**, Computer Science and Mathematics
+
+- MLK Academic Magnet
+- Email: nreveal@mnps.org
 
 ## Course Resources
 
-This website contains code samples, tutorials, and examples organized by week and topic. All code is written in Java and designed to help you succeed on the AP Computer Science A exam.
+This website contains sample code oriented by week and topic. All code is written in Java and designed to help you succeed on the AP Computer Science A exam.
 
