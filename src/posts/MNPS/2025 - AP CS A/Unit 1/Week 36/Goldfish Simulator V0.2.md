@@ -7,7 +7,7 @@ tags: ['goldfish','methods','parameters','week36']
 
 ---
 
-```Java
+```java
 public class Goldfish {
     private static boolean isFull = false;
     private static boolean existsFishFlakes = false;
