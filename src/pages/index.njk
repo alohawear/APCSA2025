@@ -2,10 +2,10 @@
 layout: base
 permalink: /index.html
 title: 'AP Computer Science A'
-description: 'Java code samples and tutorials for AP Computer Science A students at Martin Luther King Jr. Academic Magnet.'
-blog:
+description: 'Java code samples for AP Computer Science A students at Martin Luther King Jr. Academic Magnet.'
+code:
   title: 'Recent Code Samples'
-  intro: "Here are the latest Java examples and tutorials for our AP CS A course:"
+  intro: "Here are the latest Java samples for our AP CS A course:"
 ---
 
 <div class="wrapper">
@@ -21,7 +21,7 @@ blog:
     <div class="wrapper flow prose">
       <h2 id="welcome-students">Welcome to AP Computer Science A</h2>
       <p>
-        This site contains Java code samples, tutorials, and examples to help you master computer science concepts 
+        This site contains Java code samples to help you master computer science concepts 
         and succeed on the AP Computer Science A exam. All code examples are organized by topic and week for 
         easy reference.
       </p>
@@ -30,7 +30,7 @@ blog:
         algorithms, and AP exam preparation using the Java programming language.
       </p>
       <p>
-        Browse by <a href="/tags/">topic tags</a> or view all <a href="/blog/">code samples chronologically</a>. 
+        Browse by <a href="/topics/">topic</a> or view all <a href="/code/">code samples</a> chronologically. 
         Each example includes explanations and properly formatted Java code with syntax highlighting.
       </p>
     </div>
@@ -38,16 +38,16 @@ blog:
 
   <section class="full | region">
     <div class="wrapper flow prose">
-      <h2>{{ blog.title }}</h2>
-      {% if blog.intro %}
-        <p>{{ blog.intro }}</p>
+      <h2>{{ code.title }}</h2>
+      {% if code.intro %}
+        <p>{{ code.intro }}</p>
       {% endif %}
       <div class="feature |  region region-space-l">
         <custom-masonry layout="50-50">
           {% set itemList = collections.allPosts %}
 					{% asyncEach item in itemList.slice(0, 4) %}
             {% set headingLevel = "h3" %}
-						{% include "partials/card-blog.njk" %}
+						{% include "partials/card-code.njk" %}
 					{% endeach %}
         </custom-masonry>
       </div>

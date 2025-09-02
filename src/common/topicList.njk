@@ -1,5 +1,5 @@
 ---
-layout: tags
+layout: topics
 pagination:
   data: collections.tagList
   size: 1
@@ -13,7 +13,7 @@ eleventyComputed:
   {% set itemList = collections[tag] | reverse %}
   {% for item in itemList %}
 
-		{% include "partials/card-tag.njk" %}
+		{% include "partials/card-topic.njk" %}
   {% endfor %}
 </custom-masonry>
 

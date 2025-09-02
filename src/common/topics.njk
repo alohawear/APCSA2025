@@ -1,5 +1,5 @@
 ---
-layout: tags
+layout: topics
 permalink: /topics/index.html
 eleventyComputed:
   title: '{{ meta.blog.tagPlural }}'
@@ -15,6 +15,6 @@ eleventyComputed:
   {% set itemlist = collections.posts %}
   {% for item in itemlist %}
 
-		{% include "partials/card-tag.njk" %}
+		{% include "partials/card-topic.njk" %}
   {% endfor %}
 </custom-masonry>

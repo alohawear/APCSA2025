@@ -14,7 +14,13 @@ import java.util.Scanner;
 
 /**
  * Pet Rock Simulator - Demonstrates Scanner methods for keyboard input
+ * 
  * This program showcases all the key Scanner methods in an engaging context
+ * for AP Computer Science A students studying console input and user interaction.
+ *
+ * @author N. Reveal
+ * @author Claude Code (Anthropic AI)
+ * @version 2025-08-25
  */
 public class PetRockSimulator {
     public static void main(String[] args) {

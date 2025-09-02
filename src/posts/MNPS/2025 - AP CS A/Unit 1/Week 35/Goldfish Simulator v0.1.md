@@ -3,10 +3,20 @@
 title: "Goldfish Simulator v0.1"
 description: "This code demonstrates how to use methods from within the main method."
 date: 2025-08-25
-tags: ['week35','methods']
+tags: ['week35','methods','goldfish']
 
 ---
 ```java
+/**
+ * Goldfish Simulator v0.1 - Demonstrates method calls and static variables
+ * 
+ * This program shows how to use methods from within the main method and
+ * demonstrates static variables for AP Computer Science A students.
+ *
+ * @author N. Reveal
+ * @author Claude Code (Anthropic AI)
+ * @version 2025-08-25
+ */
 public class Goldfish {
     private static boolean isFull = false;
     public static void main(String[] args) {

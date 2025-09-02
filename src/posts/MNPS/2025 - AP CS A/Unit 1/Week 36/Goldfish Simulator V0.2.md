@@ -8,6 +8,16 @@ tags: ['goldfish','methods','parameters','week36']
 ---
 
 ```java
+/**
+ * Goldfish Simulator v0.2 - Demonstrates methods with parameters
+ * 
+ * An iteration on the Goldfish Simulator showing how to use methods to simplify code
+ * and pass parameters into methods for AP Computer Science A students.
+ *
+ * @author N. Reveal
+ * @author Claude Code (Anthropic AI)
+ * @version 2025-09-02
+ */
 public class Goldfish {
     private static boolean isFull = false;
     private static boolean existsFishFlakes = false;

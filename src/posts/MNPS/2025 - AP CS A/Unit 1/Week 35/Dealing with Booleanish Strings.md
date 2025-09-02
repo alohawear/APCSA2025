@@ -8,6 +8,16 @@ tags: ['week35','boolean','sample']
 ```java
 import java.util.Scanner;
 
+/**
+ * BooleanHandler - Demonstrates flexible boolean string parsing
+ * 
+ * Shows how to handle various boolean representations like "yes/no", "true/false", 
+ * and "1/0" for AP Computer Science A students studying string processing.
+ *
+ * @author N. Reveal
+ * @author Claude Code (Anthropic AI)
+ * @version 2025-08-25
+ */
 public class BooleanHandler {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

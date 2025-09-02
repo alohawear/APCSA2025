@@ -10,6 +10,16 @@ tags: ['strings','casting','integer', 'double']
 ```java
 import java.util.Scanner;
 
+/**
+ * StringParsingDemo - Demonstrates string to number conversion
+ * 
+ * Shows how to convert strings that look like numbers into actual integer
+ * and double values for AP Computer Science A students studying type conversion.
+ *
+ * @author N. Reveal
+ * @author Claude Code (Anthropic AI)
+ * @version 2025-08-25
+ */
 public class StringParsingDemo {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

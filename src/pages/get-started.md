@@ -5,13 +5,9 @@ description: 'This site is a work in progress for the AP Computer Science A cour
 layout: page
 ---
 
-## Possible Enhancements
-
-<!-- loop docs -->
-{% set itemList = collections.docs %}
-{% include 'partials/details.njk' %}
-
 ## Frequently Asked Questions
+
+As we come up with important questions, we'll document the questions and their answers here. There's a lot of potential to expand this website!
 
 <!-- loop faqs -->
 {% set itemList = collections.faqs %}
