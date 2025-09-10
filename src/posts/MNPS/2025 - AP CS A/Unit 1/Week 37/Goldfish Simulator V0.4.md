@@ -3,7 +3,7 @@
 title: "Goldfish Simulator v0.4"
 description: "An object enabled goldfish simulator."
 date: 2025-09-10
-tags: ['week37','simulator','goldfish']
+tags: ['week37','simulator','goldfish','methods','objects','parameters']
 
 ---
 ```java
