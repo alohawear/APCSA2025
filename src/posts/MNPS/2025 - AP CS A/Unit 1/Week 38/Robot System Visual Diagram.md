@@ -22,26 +22,35 @@ This visual diagram shows the complete structure of our robot system, including 
 
 ### Key Features Illustrated:
 
-**Constants (+ prefix)**:
+**UML Visibility Notation:**
+- **+ (plus sign) = Public**: Accessible from other classes
+- **- (minus sign) = Private**: Only accessible within the same class
+
+**Constants (+ prefix - public static final)**:
 - All classes use `public static final` constants
-- Examples: `MAX_POWER = 100`, `SAFE_DISTANCE_CM = 10.0`
+- Examples: `+MAX_POWER: int = 100`, `+SAFE_DISTANCE_CM: double = 10.0`
 - Eliminates "magic numbers" and improves maintainability
 
-**Instance Variables (- prefix)**:
+**Instance Variables (- prefix - private)**:
 - All instance variables are `private` for encapsulation
 - Examples: `-wheelName: String`, `-isPoweredOn: boolean`
-- Access controlled through public methods
+- Access controlled through public getter and setter methods
 
 **Public Methods (+ prefix)**:
 - Interface for interacting with each class
-- Examples: `+setPower(int power)`, `+detectColor(): String`
+- Examples: `+setPower(int power): void`, `+detectColor(): String`
 - Provide controlled access to class functionality
 
+**Private Methods (- prefix)**:
+- Internal helper methods not accessible from other classes
+- Examples: `-takeSingleReading(): double`, `-analyzeRGBValues(): String`
+- Implementation details hidden from external users
+
 **Composition Relationships**:
-- **Robot *-- "4" Wheel**: Robot contains exactly 4 wheels
-- **Robot *-- "1" Grabber**: Robot contains 1 grabber
-- **Robot *-- "1" DistanceSensor**: Robot contains 1 distance sensor  
-- **Robot *-- "1" ColorSensor**: Robot contains 1 color sensor
+- **Robot <-- "4" Wheel**: Robot contains exactly 4 wheels
+- **Robot <-- "1" Grabber**: Robot contains 1 grabber
+- **Robot <-- "1" DistanceSensor**: Robot contains 1 distance sensor  
+- **Robot <-- "1" ColorSensor**: Robot contains 1 color sensor
 
 ### Object-Oriented Concepts Demonstrated:
 
