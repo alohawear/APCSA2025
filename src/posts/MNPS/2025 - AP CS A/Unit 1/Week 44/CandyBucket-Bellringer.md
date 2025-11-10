@@ -7,22 +7,7 @@ tags: ['week44', 'class-design', 'static-variables', 'boolean-return']
 
 ## 2025-10-27 CandyBucket Class Bellringer
 
-```mermaid
-classDiagram
-    class CandyBucket {
-        -String color
-        -int candyCount
-        -double weightInOunces
-        -int maxCandy$
-        +CandyBucket(String color)
-        +getColor() String
-        +getCandyCount() int
-        +getWeightInOunces() double
-        +getMaxCandy() int
-        +setColor(String color) void
-        +addCandy(int pieces) boolean
-    }
-```
+![CandyBucket Class Diagram](/assets/images/diagrams/candybucket-class-diagram.svg "UML class diagram for CandyBucket class with static variable")
 
 What's up with addCandy(). It returns a boolean that indicates if candy was successfully added to the bucket! If the bucket can't take any more, then we don't add the candy and we return False. If the bucket can take more, we add the candy and return True.
 

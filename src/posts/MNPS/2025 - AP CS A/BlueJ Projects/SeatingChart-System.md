@@ -11,63 +11,7 @@ A multi-class project for managing classroom seating charts, demonstrating advan
 
 ## System Architecture
 
-```mermaid
-classDiagram
-    class Student {
-        -String firstName
-        -String lastName
-        -int studentID
-        -int tardies
-        -int maxTardies$
-        +Student(String, String, int)
-        +getFirstName() String
-        +getLastName() String
-        +getStudentID() int
-        +getTardies() int
-        +addTardy() void
-        +isOverTardyLimit() boolean
-        +toString() String
-    }
-
-    class Seat {
-        -int seatNumber
-        -Student occupant
-        +Seat(int)
-        +getSeatNumber() int
-        +getOccupant() Student
-        +isEmpty() boolean
-        +assignStudent(Student) void
-        +removeStudent() void
-        +toString() String
-    }
-
-    class SeatingChart {
-        -String roomNumber
-        -int period
-        -Seat[] seats
-        -int numSeats
-        +SeatingChart(String, int, int)
-        -initializeSeats() void
-        +assignStudent(Student, int) void
-        +getRoomNumber() String
-        +getPeriod() int
-        +getSeat(int) Seat
-        +toString() String
-    }
-
-    class ChartMaker {
-        -ArrayList~SeatingChart~ charts
-        +ChartMaker()
-        +createChart(String, int, int) SeatingChart
-        +getChart(String, int) SeatingChart
-        +listAllCharts() void
-        +loadFromCSV(String) ArrayList~Student~
-    }
-
-    Seat "1" *-- "0..1" Student : contains
-    SeatingChart "1" *-- "many" Seat : contains
-    ChartMaker "1" o-- "many" SeatingChart : manages
-```
+![Seating Chart System Class Diagram](/assets/images/diagrams/seatingchart-system-class-diagram.svg "Complete UML class diagram showing the four-class seating chart system")
 
 ## Class 1: Student
 

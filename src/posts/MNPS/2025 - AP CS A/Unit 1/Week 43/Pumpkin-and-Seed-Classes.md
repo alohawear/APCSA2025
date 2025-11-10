@@ -11,39 +11,7 @@ A Halloween-themed example demonstrating **object composition** - when one class
 
 ## Class Diagram
 
-```mermaid
-classDiagram
-    class Pumpkin {
-        -String color
-        -int mass
-        -double circumference
-        -boolean isCarved
-        -Seed[] seeds
-        +Pumpkin(String, int, double, boolean)
-        +getColor() String
-        +getMass() int
-        +getCircumference() double
-        +getIsCarved() boolean
-        +getSeeds() Seed[]
-        +setColor(String) void
-        +setMass(int) void
-        +setCircumference(double) void
-        +setIsCarved(boolean) void
-        +setSeeds(Seed[]) void
-        +countSeeds() int
-    }
-
-    class Seed {
-        -int mass
-        -boolean sprouted
-        +Seed(int, boolean)
-        +getMass() int
-        +getSprouted() boolean
-        +sprout() void
-    }
-
-    Pumpkin "1" *-- "0..*" Seed : contains
-```
+![Pumpkin and Seed Class Diagram](/assets/images/diagrams/pumpkin-seed-class-diagram.svg "UML class diagram showing Pumpkin and Seed classes with composition relationship")
 
 ## The Seed Class
 
