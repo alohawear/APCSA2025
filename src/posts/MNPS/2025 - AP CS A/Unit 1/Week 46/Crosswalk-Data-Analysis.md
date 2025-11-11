@@ -1,6 +1,6 @@
 ---
 title: "Crosswalk Data Analysis System"
-description: "A two-class system analyzing real Nashville sidewalk data using ArrayList, file reading, and data analysis algorithms."
+description: "A two-class system analyzing real Nashville crosswalk data using ArrayList, file reading, and data analysis algorithms."
 date: 2025-11-09
 tags: ['week46', 'arraylist', 'file-reading', 'data-analysis', 'object-relationships']
 ---
@@ -30,22 +30,22 @@ id,surveyor,markings,width,condition
 - `width` - width in feet
 - `condition` - P (Poor), F (Fair), or G (Good)
 
-## Class 1: Sidewalk
+## Class 1: Crosswalk
 
-Represents a single sidewalk segment.
+Represents a single crosswalk segment.
 
 ```java
 /**
- * Represents a single sidewalk segment from the city's crosswalk survey data.
+ * Represents a single crosswalk segment from the city's crosswalk survey data.
  *
  * Data fields:
- * - id: unique identifier for the sidewalk segment
+ * - id: unique identifier for the crosswalk segment
  * - surveyor: initials of the person who surveyed this segment
  * - markings: type of markings (L = Longitudinal, T = Transverse)
- * - width: width of the sidewalk in feet
+ * - width: width of the crosswalk in feet
  * - condition: condition rating (P = Poor, F = Fair, G = Good)
  */
-public class Sidewalk {
+public class Crosswalk {
     // Instance variables - private for encapsulation
     private int id;
     private String surveyor;
@@ -54,15 +54,15 @@ public class Sidewalk {
     private String condition;
 
     /**
-     * Constructs a new Sidewalk object with the specified attributes.
+     * Constructs a new Crosswalk object with the specified attributes.
      *
-     * @param id the unique identifier for this sidewalk segment
+     * @param id the unique identifier for this crosswalk segment
      * @param surveyor the initials of the surveyor
      * @param markings the type of markings (L or T)
-     * @param width the width of the sidewalk in feet
+     * @param width the width of the crosswalk in feet
      * @param condition the condition rating (P, F, or G)
      */
-    public Sidewalk(int id, String surveyor, String markings, int width, String condition) {
+    public Crosswalk(int id, String surveyor, String markings, int width, String condition) {
         this.id = id;
         this.surveyor = surveyor;
         this.markings = markings;
@@ -93,21 +93,21 @@ public class Sidewalk {
     }
 
     /**
-     * Returns a string representation of this Sidewalk.
+     * Returns a string representation of this Crosswalk.
      *
-     * @return a formatted string containing all sidewalk information
+     * @return a formatted string containing all crosswalk information
      */
     public String toString() {
-        return "Sidewalk #" + id + ": " + width + "ft wide, " +
+        return "Crosswalk #" + id + ": " + width + "ft wide, " +
                markings + " markings, Condition: " + condition +
                " (Surveyor: " + surveyor + ")";
     }
 }
 ```
 
-## Class 2: SidewalkAnalyzer
+## Class 2: CrosswalkAnalyzer
 
-Loads and analyzes sidewalk data from CSV files.
+Loads and analyzes crosswalk data from CSV files.
 
 ```java
 import java.util.ArrayList;
@@ -116,21 +116,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
- * Analyzes sidewalk data from the city's crosswalk survey.
+ * Analyzes crosswalk data from the city's crosswalk survey.
  * Demonstrates ArrayList usage, file reading, and data analysis algorithms.
  */
-public class SidewalkAnalyzer {
-    private ArrayList<Sidewalk> sidewalks;
+public class CrosswalkAnalyzer {
+    private ArrayList<Crosswalk> crosswalks;
 
     /**
-     * Constructs a new SidewalkAnalyzer with an empty list of sidewalks.
+     * Constructs a new CrosswalkAnalyzer with an empty list of crosswalks.
      */
-    public SidewalkAnalyzer() {
-        sidewalks = new ArrayList<Sidewalk>();
+    public CrosswalkAnalyzer() {
+        crosswalks = new ArrayList<Crosswalk>();
     }
 
     /**
-     * Loads sidewalk data from a CSV file.
+     * Loads crosswalk data from a CSV file.
      *
      * @param filename the name of the CSV file to read
      * @throws FileNotFoundException if the file cannot be found
@@ -144,7 +144,7 @@ public class SidewalkAnalyzer {
             fileScanner.nextLine();
         }
 
-        // Read each line and create Sidewalk objects
+        // Read each line and create Crosswalk objects
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
             String[] parts = line.split(",");
@@ -156,49 +156,49 @@ public class SidewalkAnalyzer {
             int width = Integer.parseInt(parts[3]);
             String condition = parts[4];
 
-            Sidewalk s = new Sidewalk(id, surveyor, markings, width, condition);
-            sidewalks.add(s);
+            Crosswalk c = new Crosswalk(id, surveyor, markings, width, condition);
+            crosswalks.add(c);
         }
 
         fileScanner.close();
     }
 
     /**
-     * Returns the total number of sidewalks in the dataset.
+     * Returns the total number of crosswalks in the dataset.
      *
-     * @return the number of sidewalks
+     * @return the number of crosswalks
      */
     public int getTotalCount() {
-        return sidewalks.size();
+        return crosswalks.size();
     }
 
     /**
-     * Adds a sidewalk to the collection.
+     * Adds a crosswalk to the collection.
      * Demonstrates the ArrayList add() method.
      *
-     * @param s the Sidewalk object to add
+     * @param c the Crosswalk object to add
      */
-    public void addSidewalk(Sidewalk s) {
-        sidewalks.add(s);
+    public void addCrosswalk(Crosswalk c) {
+        crosswalks.add(c);
     }
 
     /**
-     * Removes all sidewalks surveyed by a specific person.
+     * Removes all crosswalks surveyed by a specific person.
      * Demonstrates the ArrayList remove() method.
      * NOTE: When removing items, we must iterate BACKWARDS to avoid skipping elements.
      * We cannot use an enhanced for loop when removing items - it will cause
      * a ConcurrentModificationException.
      *
-     * @param surveyorInitials the initials of the surveyor whose sidewalks should be removed
-     * @return the number of sidewalks removed
+     * @param surveyorInitials the initials of the surveyor whose crosswalks should be removed
+     * @return the number of crosswalks removed
      */
-    public int removeSidewalksBySurveyor(String surveyorInitials) {
+    public int removeCrosswalksBySurveyor(String surveyorInitials) {
         int removedCount = 0;
 
         // Iterate backwards to safely remove items
-        for (int i = sidewalks.size() - 1; i >= 0; i--) {
-            if (sidewalks.get(i).getSurveyor().equals(surveyorInitials)) {
-                sidewalks.remove(i);
+        for (int i = crosswalks.size() - 1; i >= 0; i--) {
+            if (crosswalks.get(i).getSurveyor().equals(surveyorInitials)) {
+                crosswalks.remove(i);
                 removedCount++;
             }
         }
@@ -207,15 +207,15 @@ public class SidewalkAnalyzer {
     }
 
     /**
-     * Counts the number of sidewalks in poor condition.
+     * Counts the number of crosswalks in poor condition.
      * Demonstrates the counting pattern using an enhanced for loop.
      *
-     * @return the count of sidewalks with condition "P"
+     * @return the count of crosswalks with condition "P"
      */
     public int countPoorCondition() {
         int count = 0;
-        for (Sidewalk s : sidewalks) {
-            if (s.getCondition().equals("P")) {
+        for (Crosswalk c : crosswalks) {
+            if (c.getCondition().equals("P")) {
                 count++;
             }
         }
@@ -223,98 +223,98 @@ public class SidewalkAnalyzer {
     }
 
     /**
-     * Calculates the average width of all sidewalks.
+     * Calculates the average width of all crosswalks.
      *
-     * @return the average width in feet, or 0.0 if no sidewalks
+     * @return the average width in feet, or 0.0 if no crosswalks
      */
     public double getAverageWidth() {
-        if (sidewalks.size() == 0) {
+        if (crosswalks.size() == 0) {
             return 0.0;
         }
 
         int totalWidth = 0;
-        for (Sidewalk s : sidewalks) {
-            totalWidth += s.getWidth();
+        for (Crosswalk c : crosswalks) {
+            totalWidth += c.getWidth();
         }
 
-        return (double) totalWidth / sidewalks.size();
+        return (double) totalWidth / crosswalks.size();
     }
 
     /**
-     * Finds the sidewalk with the maximum width.
+     * Finds the crosswalk with the maximum width.
      *
-     * @return the Sidewalk with the greatest width, or null if list is empty
+     * @return the Crosswalk with the greatest width, or null if list is empty
      */
-    public Sidewalk getWidestSidewalk() {
-        if (sidewalks.size() == 0) {
+    public Crosswalk getWidestCrosswalk() {
+        if (crosswalks.size() == 0) {
             return null;
         }
 
-        Sidewalk widest = sidewalks.get(0);
-        for (Sidewalk s : sidewalks) {
-            if (s.getWidth() > widest.getWidth()) {
-                widest = s;
+        Crosswalk widest = crosswalks.get(0);
+        for (Crosswalk c : crosswalks) {
+            if (c.getWidth() > widest.getWidth()) {
+                widest = c;
             }
         }
         return widest;
     }
 
     /**
-     * Finds the sidewalk with the minimum width.
+     * Finds the crosswalk with the minimum width.
      *
-     * @return the Sidewalk with the smallest width, or null if list is empty
+     * @return the Crosswalk with the smallest width, or null if list is empty
      */
-    public Sidewalk getNarrowestSidewalk() {
-        if (sidewalks.size() == 0) {
+    public Crosswalk getNarrowestCrosswalk() {
+        if (crosswalks.size() == 0) {
             return null;
         }
 
-        Sidewalk narrowest = sidewalks.get(0);
-        for (Sidewalk s : sidewalks) {
-            if (s.getWidth() < narrowest.getWidth()) {
-                narrowest = s;
+        Crosswalk narrowest = crosswalks.get(0);
+        for (Crosswalk c : crosswalks) {
+            if (c.getWidth() < narrowest.getWidth()) {
+                narrowest = c;
             }
         }
         return narrowest;
     }
 
     /**
-     * Prints a summary report of the sidewalk data.
+     * Prints a summary report of the crosswalk data.
      */
     public void printSummary() {
-        System.out.println("=== Sidewalk Survey Summary ===");
-        System.out.println("Total sidewalks surveyed: " + getTotalCount());
-        System.out.println("Sidewalks in poor condition: " + countPoorCondition());
+        System.out.println("=== Crosswalk Survey Summary ===");
+        System.out.println("Total crosswalks surveyed: " + getTotalCount());
+        System.out.println("Crosswalks in poor condition: " + countPoorCondition());
         System.out.println();
 
         System.out.println("Width Statistics:");
         System.out.println("  Average width: " + getAverageWidth() + " feet");
 
-        Sidewalk widest = getWidestSidewalk();
+        Crosswalk widest = getWidestCrosswalk();
         if (widest != null) {
             System.out.println("  Widest: " + widest.getWidth() + " feet (ID #" + widest.getId() + ")");
         }
 
-        Sidewalk narrowest = getNarrowestSidewalk();
+        Crosswalk narrowest = getNarrowestCrosswalk();
         if (narrowest != null) {
             System.out.println("  Narrowest: " + narrowest.getWidth() + " feet (ID #" + narrowest.getId() + ")");
         }
     }
 
     /**
-     * Main method to demonstrate the SidewalkAnalyzer.
+     * Main method to demonstrate the CrosswalkAnalyzer.
      * @throws FileNotFoundException if the data file cannot be found
      */
     public static void main(String[] args) throws FileNotFoundException {
-        SidewalkAnalyzer analyzer = new SidewalkAnalyzer();
+        CrosswalkAnalyzer analyzer = new CrosswalkAnalyzer();
         analyzer.loadData("crosswalk.csv");
         analyzer.printSummary();
 
         System.out.println();
         System.out.println("=== Sample Data ===");
-        System.out.println("First 5 sidewalks:");
+        System.out.println("First 5 crosswalks:");
         for (int i = 0; i < 5 && i < analyzer.getTotalCount(); i++) {
-            System.out.println(analyzer.sidewalks.get(i));
+            System.out.println(analyzer.crosswalks.get(i));
         }
     }
 }
@@ -323,21 +323,21 @@ public class SidewalkAnalyzer {
 ## Key Concepts Demonstrated
 
 1. **Encapsulation**: Private instance variables with public getter methods
-2. **Object Relationships**: SidewalkAnalyzer contains an ArrayList of Sidewalk objects
+2. **Object Relationships**: CrosswalkAnalyzer contains an ArrayList of Crosswalk objects
 3. **File I/O**: Reading CSV data using Scanner
 4. **ArrayList Operations**: add(), get(), remove(), size()
 5. **Data Analysis Patterns**:
    - Counting pattern (countPoorCondition)
    - Averaging pattern (getAverageWidth)
-   - Finding min/max (getNarrowestSidewalk, getWidestSidewalk)
+   - Finding min/max (getNarrowestCrosswalk, getWidestCrosswalk)
 6. **Safe Removal**: Iterating backwards when removing from ArrayList
 
 ## Expected Output
 
 ```
-=== Sidewalk Survey Summary ===
-Total sidewalks surveyed: 1824
-Sidewalks in poor condition: 621
+=== Crosswalk Survey Summary ===
+Total crosswalks surveyed: 1824
+Crosswalks in poor condition: 621
 
 Width Statistics:
   Average width: 9.8 feet
