@@ -13,6 +13,10 @@ export default {
       url: '/topics/'
     },
     {
+      text: 'Robotics',
+      url: '/robotics/'
+    },
+    {
       text: 'Docs',
       url: '/docs/'
     }
