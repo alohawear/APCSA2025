@@ -41,18 +41,38 @@ Our team uses OnBot Java to program human control and autonomous operation of th
 
 ## Code Examples & Templates
 
-### Teleop (Driver-Controlled)
-- Tank drive
-- Arcade controls
-- Manipulator controls
-- Button mapping
+### Royal Robotics Code Examples
 
-### Autonomous
-- Basic movement (drive forward, turn)
-- Sensor-based navigation
-- AprilTag alignment
-- Parking routines
-- Scoring sequences
+We have three complete, documented code examples for learning FTC programming:
+
+1. **[Multi-Mode OpMode](/robotics/multi-mode-opmode/)** - Comprehensive example with three control modes
+   - Keyboard drive (testing without gamepad)
+   - Gamepad TeleOp (driver control)
+   - Autonomous sequences
+   - AprilTag vision processing
+   - Differential drive control
+   - Shooter mechanism with timed sequences
+
+2. **[REV Starter Bot TeleOp](/robotics/rev-starter-teleop/)** - Professional driver control
+   - Split-stick arcade drive
+   - Velocity-controlled flywheel (DcMotorEx)
+   - Smart feeding system (waits for flywheel spin-up)
+   - Manual override controls
+   - Real-time telemetry display
+
+3. **[Combined TeleOp and Autonomous](/robotics/combined-teleop-auto/)** - Competition-ready
+   - Pre-start mode selection (TeleOp / Auto Blue / Auto Red)
+   - Encoder-based autonomous navigation
+   - Alliance-specific autonomous routines
+   - Timer-based shooting sequences
+   - Code reuse between TeleOp and autonomous
+
+Each example includes:
+- Detailed explanations of FTC concepts
+- Inline code comments
+- Hardware requirements
+- Control schemes
+- Full downloadable source code
 
 ---
 

@@ -25,6 +25,11 @@ FIRST Tech Challenge (FTC) is a robotics competition for students in grades 7-12
 - [Build Guides & PDFs](/robotics/resources/)
 - [Programming Resources](/robotics/programming/)
 
+### Code Examples
+- [Multi-Mode OpMode](/robotics/multi-mode-opmode/) - Keyboard, gamepad, and autonomous
+- [REV Starter TeleOp](/robotics/rev-starter-teleop/) - Driver control with velocity shooter
+- [Combined TeleOp/Auto](/robotics/combined-teleop-auto/) - Mode selection for competition
+
 ### Competition & Updates
 - [Competition Calendar](/robotics/competitions/)
 - [Team Blog](/robotics/blog/)
